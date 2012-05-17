@@ -1,0 +1,1038 @@
+// VARIABLES
+// --------------------------------------------------
+
+// Grays
+// -------------------------
+@black:                 #000;
+@grayDarker:            #444;
+@grayDark:              #666;
+@gray:                  #777;
+@grayLight:             #999;
+@grayLighter:           #aaa;
+@white:                 #fff;
+
+// Colors
+// -------------------------
+//@mainColor:             #de9847;
+//@mainColor:             #990104;
+//@mixColor:              #ba4e4a;
+
+@primaryColor:          #5395BE;
+@primaryColorLight:     lighten(@primaryColor, 15%);
+@primaryColorLighter:   lighten(@primaryColor, 30%);
+@primaryColorLightest:  lighten(@primaryColor, 40%);
+@primaryColorDark:      darken(@primaryColor, 15%);
+@primaryColorDarker:    darken(@primaryColor, 40%);
+
+// Scaffolding
+// -------------------------
+@bodyBackground:        #F0F0F0;
+@textColor:             @grayDark;
+
+// Typography
+// -------------------------
+@baseFontSize:          13px;
+@baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@baseLineHeight:        18px;
+
+// Layout
+// -------------------------
+@containerWidth:          940px;
+
+// Forms
+// -------------------------
+@inputTextSize:           14px;
+@inputLineHeight:         20px;
+@inputTopBottomPadding:    4px;
+@inputLeftRightPadding:    9px;
+@inputBorderSize:          1px;
+@inputBorderColor:        #CFCFCF;
+@inputFocusBgColor:       @primaryColorLightest;
+
+// Buttons
+// -------------------------
+@btnBackground:                     @primaryColorDark;
+@btnBackgroundHighlight:            @primaryColorLight;
+@btnBorder:                         @primaryColorDarker;
+
+@btnFontSize:                       14px;
+@btnLineHeight:                     20px;
+
+@btnSuccessBackground:              #51a351;
+@btnSuccessBackgroundHighlight:     #62c462;
+
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+@zindexDropdown:          1000;
+@zindexNotification:      1010;
+
+// Cards
+// -------------------------
+// Ratio of a card is around 1.75 (3.5/2)
+@cardSmallWidth:          300px;
+@cardSmallHeight:         170px;
+@cardSmallSideMargin:     20px;
+@cardSmallRowMargin:      30px;
+
+@cardFullWidth:           480px;
+
+// Notifications
+// --------------------------------------------------
+@notificationFontSize:      13px;
+@notificationLineHeight:    18px;
+
+@warningText:             #c09853;
+@warningBackground:       #fcf8e3;
+@warningBorder:           darken(spin(@warningBackground, -10), 3%);
+@errorText:               #b94a48;
+@errorBackground:         #f2dede;
+@errorBorder:             darken(spin(@errorBackground, -10), 3%);
+
+
+// APPLICATION
+// --------------------------------------------------
+
+a {
+  color: @primaryColor;
+  text-decoration: none;
+}
+a:hover {
+  color: @primaryColorLight;
+  text-decoration: none;
+}
+
+// Nav
+// -------------------------
+.navbar {
+  background: @primaryColorDark;
+  .box-shadow(0 1px 4px rgba(0,0,0,.25));
+  margin-bottom: 10px;
+  padding: 5px 0;
+}
+
+.logo {
+  float: left;
+  padding: 0;
+  margin: 0 20px 0 0;
+  line-height: 27px;
+  padding-bottom: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  
+  a {
+    color: @white;
+    text-shadow: 0 1px 1px @black;
+  }
+}
+
+ul.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+
+  li {
+    float: left;
+    padding: 0;
+    margin: 5px 20px 5px 0;
+    line-height: 20px;
+    font-size: 14px;
+    color: @primaryColorDarker;
+
+    a {
+      color: @primaryColorLighter;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: @white
+    }
+  }
+
+  li.active {
+    a {
+      color: @primaryColorDarker;
+    }
+  }
+}
+
+ul.nav.nav-right {
+  float: right;
+
+  li {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+}
+
+
+// Subnav
+// -------------------------
+
+.subnavbar {
+  margin-bottom: 20px;
+  .box-shadow(inset rgba(0, 0, 0, 0.2) 0px -1px 0 0);
+  border-bottom: 1px rgba(255, 255, 255, 0.75) solid;
+  padding: 5px 0;
+}
+
+ul.subnav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  
+  li {
+    float: left;
+    padding: 0;
+    margin: 5px 20px 5px 0;
+    line-height: 19px;
+    font-size: 14px;
+    font-weight: bold;
+    color: @grayDarker;
+
+    a {
+      color: @grayLight;
+    }
+
+    a:hover {
+      color: @grayDark;
+    }
+  }
+
+  li.active {
+    a {
+      color: @grayDarker;
+    }
+  }
+
+}
+
+ul.subnav.subnav-right {
+  float: right;
+
+  li {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+}
+
+
+// Card (all views)
+// -------------------------
+.card {
+  background: @white;
+  .box-shadow(0 1px 4px rgba(0,0,0,.25));
+
+  .name {
+    color: @primaryColor;
+    font-weight: bold;
+  }
+
+  .address, .city {
+    color: @grayLight;
+  }
+
+  .owner {
+    font-weight: bold;
+
+    a {
+      color: @grayLight;
+    }
+
+    a:hover {
+      color: @grayDark;
+    }
+  }
+
+}
+
+
+// Card list
+// -------------------------
+ol.cards {
+  list-style: none;
+  // Allow last card of row to fit with its right margin
+  margin: 0 -@cardSmallSideMargin 0 0;
+  padding: 0;
+
+  li {
+    float: left;
+    padding: 0;
+    margin: 0 @cardSmallSideMargin @cardSmallRowMargin 0;
+  }
+
+  .card-small {
+    width: @cardSmallWidth;
+    height: @cardSmallHeight;
+
+    .card-content {
+      padding: 10px;
+      font-size: 11px;
+      line-height: 16px;
+    }
+
+    a.card-link {
+      color: @textColor;
+      text-decoration: none;
+      display: block;
+    }
+
+    .card-main {
+      height: 130px;
+    }
+
+    .card-footer {
+      margin-top: 9px;
+      line-height: 11px;
+    }
+
+    .name {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    .notes {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    .address {
+      margin-bottom: 18px;
+    }
+
+    .city {
+      float: right;
+    }
+  }
+
+  .card-small:hover {
+    .box-shadow(0 1px 6px rgba(0,0,0,.4));
+  }
+}
+
+// Card single
+// -------------------------
+.card-single {
+
+  max-width: @cardFullWidth;
+  margin: auto;
+  margin-bottom: 60px;
+
+  .card-content {
+    padding: 20px;
+  }
+}
+
+// Card single (show)
+// -------------------------
+.card-single.card-show {
+
+  .card-content {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .name {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .notes {
+    margin: 40px 0 55px 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .city {
+    float: right;
+  }
+}
+
+// Card single (edit & new)
+// -------------------------
+.card-single.card-edit, .card-single.card-new {
+
+  .card-content {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  textarea[name="notes"] {
+    // 3 rows of text, account for padding and border
+    min-height: 3*@inputLineHeight + 2*(@inputTopBottomPadding + @inputBorderSize);
+  }
+
+  .form-actions-inline {
+    margin: 20px 0 0 0;
+  }
+
+}
+
+// Card single (other)
+// -------------------------
+.card-single.card-other {
+
+  h2 {
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    line-height: 28px;
+    color: @primaryColor;
+    font-weight: bold;
+  }
+
+  .info {
+    margin: 0 0 10px 0;
+    color: @grayLight;
+  }
+}
+
+// People (deprecated)
+// -------------------------
+.card-single.card-people {
+
+  h2 {
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    line-height: 28px;
+    color: @primaryColor;
+    font-weight: bold;
+  }
+
+  .info {
+    margin: 0 0 10px 0;
+    color: @grayLight;
+  }
+}
+
+ul.people {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li.user {
+    padding: 5px 20px;
+    margin: 0 -20px;
+    border-top: 1px solid @bodyBackground;
+    .clearfix();
+
+    &:hover {
+      background: @primaryColorLightest;
+    }
+  }
+
+  .user-name, .user-actions {
+    font-weight: bold;
+
+    a {
+      color: @grayLight;
+    }
+
+    a:hover {
+      color: @grayDark;
+    }
+  }
+
+  .user-name, ul.user-actions {
+    margin: 5px 0;
+  }
+
+  .user-name {
+    float: left;
+  }
+
+  ul.user-actions {
+    list-style: none;
+    padding: 0;
+    float: right;
+
+    li {
+      float: left;
+      margin: 0 0 0 5px;
+    }
+  }
+}
+
+// FORMS
+// --------------------------------------------------
+
+input,
+button,
+select,
+textarea {
+  font-family: @baseFontFamily;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: @primaryColor;
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  // Makes inputs behave like true block-level elements
+  .box-sizing(border-box);
+  padding: @inputTopBottomPadding @inputLeftRightPadding;
+  margin: 0 0 10px 0;
+  background: @white;
+  border: @inputBorderSize solid @inputBorderColor;
+  .border-radius(3px);
+  font-size: @inputTextSize;
+  line-height: @inputLineHeight;
+  color: @grayDarker;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  background: @inputFocusBgColor;
+}
+
+.form-actions-inline {
+  
+  .clearfix();
+
+  .btn {
+    margin-right: 10px;
+    float: left;
+  }
+}
+
+// BUTTON STYLES
+// --------------------------------------------------
+
+// Core
+.btn {
+  display: inline-block;
+  //.ie7-inline-block();
+  padding: 4px 10px;
+  margin: 0;
+  font-size: @btnFontSize;
+  line-height: @btnLineHeight;
+  color: @white;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.35);
+  vertical-align: middle;
+  #gradient > .vertical(@btnBackgroundHighlight, @btnBackground);
+  border: 1px solid @btnBorder;
+  .border-radius(4px);
+  @shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,.05);
+  .box-shadow(@shadow);
+  cursor: pointer;
+  font-weight: bold;
+  //.ie7-restore-left-whitespace();
+}
+
+// Hover state
+.btn:hover {
+  color: @white;
+  text-decoration: none;
+  #gradient > .vertical(lighten(@btnBackgroundHighlight, 10%), lighten(@btnBackground, 10%));
+}
+
+// Focus state for keyboard and accessibility
+.btn:focus {
+  .tab-focus();
+}
+
+.btn-success {
+  #gradient > .vertical(@btnSuccessBackgroundHighlight, @btnSuccessBackground);
+  &:hover {
+    #gradient > .vertical(lighten(@btnSuccessBackgroundHighlight, 10%), lighten(@btnSuccessBackground, 10%));
+  }
+}
+
+// NOTIFICATIONS
+// --------------------------------------------------
+.notifications {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: @zindexNotification;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
+.notification {
+  margin: 0;
+  padding: 5px 10px;
+  font-size: @notificationFontSize;
+  line-height: @notificationLineHeight;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  .box-shadow(0 1px 2px rgba(0,0,0,.25));
+  background-color: @warningBackground;
+  border: 1px solid @warningBorder;
+  color: @warningText;
+  display: inline-block;
+}
+
+.notification-error {
+  background-color: @errorBackground;
+  border-color: @errorBorder;
+  color: @errorText;
+}
+
+
+// LANDING PAGE
+// --------------------------------------------------
+#landing-page {
+  background-color: @primaryColorLighter;
+
+  // Masthead
+  #masthead {
+    margin-top: 20px;
+    .box-shadow(inset rgba(0, 0, 0, 0.2) 0px -1px 3px 0);
+
+    #masthead-image {
+      width: 400px;
+      height: 400px;
+    }
+
+    .masthead-image-box, .masthead-text-box {
+      margin-bottom: 20px;
+    }
+
+    .masthead-image-box {
+      width: 400px;
+      height: 400px;
+      padding: 5px;
+      float: left;
+      margin-right: 20px;
+      background-color: @primaryColorDark;
+      .border-radius(3px);
+      .box-shadow(0 1px 3px rgba(0,0,0,.25));
+    }
+
+    .masthead-text-box {
+      width: 510px;
+      padding: 0;
+      float: right;
+      margin-top: 60px;
+      color: @primaryColorDark;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 20px 0;
+      font-size: 48px;
+      font-weight: bold;
+      //letter-spacing: 1px;
+      line-height: 1;
+      color: @white;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .masthead-tagline {
+      margin: 0 5% 20px 5%;
+      font-size: 24px;
+      line-height: 1.3;
+
+      strong {
+        color: @white;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      }
+    }
+
+    .masthead-actions {
+
+      .btn {
+        margin-bottom: 10px;
+        padding: 10px 0;
+        font-size: 18px;
+        line-height: 1;
+        width: 118px;
+      }
+
+      .action {
+        display: inline-block;
+        width: 120px;
+        margin-right: 40px;
+      }
+
+      .action-last {
+        margin-right: 0;
+      }
+
+      .info a {
+        font-weight: bold;
+      }
+
+    }
+
+  }
+
+  // Content
+  #content {
+    background-color: @white;
+    padding: 40px 0;
+
+    .content-block {
+
+      h2 {
+        margin: 0 0 15px 0;
+        font-size: 24px;
+        line-height: 1;
+        color: @grayDarker;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0;
+      }
+    }
+
+    .solo {
+      width: 600px;
+      margin: auto;
+    }
+
+    .features {
+      margin: 40px -80px 40px 0;
+
+      .feature {
+        float: left;
+        width: 260px;
+        margin-right: 80px;
+      }
+    }
+
+  }
+
+  // Footer
+  #footer {
+    padding-top: 20px;
+    color: @primaryColorDark;
+    .box-shadow(inset rgba(0, 0, 0, 0.2) 0px 1px 3px 0);
+
+    a {
+      color: @primaryColorDark;
+      text-decoration: underline;
+
+      &:hover {
+        color: @primaryColorDark;
+        text-decoration: underline;
+      }
+    }
+
+    .footnote, .made-by {
+      margin-bottom: 20px;
+    }
+
+    .footnote {
+      font-size: 11px;
+      line-height: 16px;
+    }
+
+    .made-by {
+
+      .name {
+        float: left;
+      }
+
+      .links {
+        float: right;
+      }
+    }
+
+  }
+
+}
+
+// SCAFFOLDING
+// --------------------------------------------------
+
+// Body reset
+// -------------------------
+body {
+  margin: 0;
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @textColor;
+  background-color: @bodyBackground;
+}
+
+// Container
+// -------------------------
+.container {
+  width: @containerWidth;
+  margin-left: auto;
+  margin-right: auto;
+  .clearfix();
+}
+
+// Self-clear floats
+.group:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+// MIXINS
+// --------------------------------------------------
+
+// For clearing floats like a boss h5bp.com/q
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Drop shadows
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+} 
+
+// Border Radius
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// Box sizing
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+      -ms-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+// Gradients
+#gradient {
+  .vertical(@startColor: #555, @endColor: #333) {
+    background-color: mix(@startColor, @endColor, 60%);
+    background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+    background-image: -ms-linear-gradient(top, @startColor, @endColor); // IE10
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+    background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    background-image: linear-gradient(top, @startColor, @endColor); // The standard
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@startColor,@endColor)); // IE9 and down
+  }
+}
+
+// Webkit-style focus
+// ------------------
+.tab-focus() {
+  // Default
+  outline: thin dotted #333;
+  // Webkit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+// RESPONSIVE
+// --------------------------------------------------
+
+// PORTRAIT PHONE
+// ---------------------
+
+@media (max-width: 320px) {
+
+  // Remove width from containers and put some padding
+  .container {
+    width: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #landing-page {
+
+    #masthead {
+
+      .masthead-tagline {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .masthead-image-box {
+        width: 290px;
+        height: 290px;
+        padding: 5px;
+
+        img {
+          max-width: 290px;
+          max-height: 290px;
+        }
+      }
+    }
+  }
+
+}
+
+// LANDSCAPE PHONE TO DEFAULT DESKTOP
+// ---------------------
+
+@media (min-width: 321px) and (max-width: 979px) {
+
+  // Remove width from containers and put some padding
+  .container {
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+// UP TO LANDSCAPE PHONE
+// ---------------------
+
+@media (max-width: 480px) {
+
+  input[type="text"], textarea {
+    // So iPhone doesn't zoom when inside input text boxes
+    font-size: 16px;
+  }
+
+  .card-single.card-edit, .card-single.card-new {
+
+    textarea[name="notes"] {
+      // Switch to 5 rows of text
+      min-height: 5*@inputLineHeight + 2*(@inputTopBottomPadding + @inputBorderSize);
+    }
+  }
+
+}
+
+// UP TO SMALL DESKTOP & PORTRAIT TABLET
+// --------------------------------------------------
+
+@media (max-width: 767px) {
+
+  // 1 card per row
+  .cards-wrapper {
+    // Center card list
+    width: @cardSmallWidth;
+    margin: auto;
+  }
+
+  #landing-page {
+
+    #masthead {
+
+      .masthead-text-box {
+        width: 100%;
+      }
+    }
+
+    #content {
+
+      .solo {
+        width: 100%;
+      }
+
+      .features {
+
+        .feature {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}
+
+// PORTRAIT TABLET TO DEFAULT DESKTOP
+// ----------------------------------
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+  // 2 cards per row
+  .cards-wrapper {
+    // Center card list
+    width: @cardSmallWidth * 2 + @cardSmallSideMargin;
+    margin: auto;
+  }
+
+  #landing-page {
+
+    #content {
+
+      .solo {
+        width: 600px;
+      }
+
+      .features {
+
+        .feature {
+          width: 600px;
+        }
+      }
+    }
+  }
+}
+
+// TABLETS AND BELOW
+// -----------------
+@media (max-width: 979px) {
+
+  #landing-page {
+
+    #masthead {
+
+      .masthead-image-box, .masthead-text-box {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .masthead-text-box {
+        margin-top: 0;
+      }
+    }
+
+    #content {
+      padding-bottom: 0;
+
+      .solo {
+        margin: auto;
+        margin-bottom: 40px;
+      }
+
+      .features {
+        margin: 0;
+
+        .feature {
+          float: none;
+          margin: auto;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+}
+
+// DEFAULT DESKTOP
+// ---------------
+
+@media (min-width: 980px) {
+
+}
+
+// LARGE DESKTOP & UP
+// ------------------
+
+@media (min-width: 1200px) {
+
+}

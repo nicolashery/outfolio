@@ -1,0 +1,48 @@
+!!! 5
+html
+
+  head
+    title Outfolio
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', type='text/css', href='/css/app.css')
+
+  body
+
+    if settings.env == 'production'
+      // Production
+      script(src='/build/vendor.js')
+      script(src='/build/templates.js')
+      script(src='/build/app.js')
+    else
+      // Development
+      // Vendor
+      script(src='/js/vendor/jquery.js')
+      script(src='/js/vendor/json2.js')
+      script(src='/js/vendor/underscore.js')
+      script(src='/js/vendor/backbone.js')
+      script(src='/js/vendor/require.js')
+      // Templates
+      script(src='/js/templates/templates.js')
+      // App
+      script(src='/js/main.js')
+
+    //- User
+    if typeof userJson !== 'undefined'
+      script(type='application/json')#user-json !{userJson}
+
+    //- Data
+    if typeof cardsJson !== 'undefined'
+      script(type='application/json')#cards-json !{cardsJson}
+
+    if typeof cardJson !== 'undefined'
+      script(type='application/json')#card-json !{cardJson}
+
+    if typeof ownerJson !== 'undefined'
+      script(type='application/json')#owner-json !{ownerJson}
+
+    if typeof sharedCardsJson !== 'undefined'
+      script(type='application/json')#sharedcards-json !{sharedCardsJson}
+
+    if typeof sharedCardJson !== 'undefined'
+      script(type='application/json')#sharedcard-json !{sharedCardJson}
+

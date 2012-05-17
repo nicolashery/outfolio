@@ -1,0 +1,16 @@
+{
+  "name": "outfolio",
+  "description": "Small app to keep a list of bars and restaurants, built with Backbone and Node.js",
+  "version": "0.1.0",
+  "author": "Nicolas Hery <nicolahery@gmail.com>",
+  "dependencies": {
+    "express": "3.0.0alpha3",
+    "jade": "0.26.0",
+    "mongoose": "2.6.4",
+    "everyauth": "0.2.32"
+  },
+  "engines": {
+    "node": "0.6.x",
+    "npm":  "1.1.x"
+  }
+}

@@ -1,0 +1,14 @@
+.card.card-single.card-edit
+  .card-content
+    form
+      label Name
+      input(name='name', type='text', value='#{name}')
+      label Address
+      input(name='address', type='text', value='#{address}')
+      label City
+      input(name='city', type='text', value='#{city}')
+      label Notes
+      textarea(name='notes') #{notes}
+      .form-actions-inline
+        button.btn.js-save Save
+        button.btn.js-cancel Cancel

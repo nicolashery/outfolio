@@ -1,0 +1,33 @@
+.container
+  .subnavbar.group
+    ul.subnav
+      if authenticated
+        li.js-cards
+          a(href='/cards') Cards
+      if owner
+        li.js-shared 
+          a(href='/shared/#{owner._id}') #{owner.name}
+    ul.subnav.subnav-right
+      if !owner && authenticated
+        if card
+          li.js-card
+            a(href='/card/#{card._id}') Card
+          li.js-edit
+            a(href='/card/#{card._id}/edit') Edit
+          li.js-card-share
+            a(href='/card/#{card._id}/share') Share
+          li.js-delete
+            a(href='#') Delete
+        else
+          li.js-new
+            a(href='/cards/new') New
+          li.js-share
+            a(href='/cards/share') Share
+          li.js-refresh
+            a(href='#') Refresh
+      else if owner && card
+        li.js-shared-card
+          a(href='/shared/#{owner._id}/card/#{card._id}') Card
+      else
+        li.js-refresh
+          a(href='#') Refresh

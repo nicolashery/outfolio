@@ -1,0 +1,105 @@
+!!! 5
+html
+
+  head
+    title Outfolio
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', type='text/css', href='../css/app.css')
+  
+  body#landing-page
+
+    .navbar
+      .container
+        .navbar-inner.group
+          .logo.js-home
+            a(href='/home') Outfolio
+          if authenticated
+            ul.nav
+              li.js-cards
+                a(href='/cards') Cards
+            ul.nav.nav-right
+              li #{user.name}
+              li.js-sign-out
+                a(href='/logout') Sign out
+          else
+            ul.nav.nav-right
+              li.js-sign-in
+                a(href='/login') Sign in
+
+    #masthead
+      .container
+        .masthead-text-box
+          h1 Outfolio
+          .masthead-tagline
+            | Keep a simple <strong>list</strong> of bars and restaurants you love <strong>going out</strong> to,
+            | and easily <strong>share</strong> them by sending a <strong>link</strong> to your friends.
+          .masthead-actions
+            .action
+              a(href='/demo').btn Demo
+              .info Try out the fully functional demo
+            .action.action-last
+              a(href='/login').btn.btn-success Sign in
+              .info Sign in with your Google account (<a href='#why-google'>?</a>)
+        .masthead-image-box
+          img(src='img/masthead.jpg', alt='Outfolio')#masthead-image
+
+    #content
+      .container
+        .content-block.solo
+          h2 Why?
+          p
+            | We shouldn't forget about the places we really like.
+            | Just like you would grab a card from a bar or restaurant, 
+            | enter the card in Outfolio so you'll never loose it.
+            | And next time a friends asks you to recommend a place, 
+            | just send her a link to your cards!
+        .features.group
+          .content-block.feature
+            h2 Simple
+            p
+              | Outfolio is just a straightforward list of cards 
+              | from bars and restaurants you enjoy.
+              | No check-ins, no social, no hassles. Just the basics!
+          .content-block.feature
+            h2 Fast
+            p
+              | Outfolio uses the lastest in web tehcnology, 
+              | a concept called asynchronous UI, 
+              | to provide a fast and snappy web experience.
+          .content-block.feature
+            h2 Mobile-friendly
+            p
+              | Outfolio looks good on any device, desktop, tablet, or smartphone,
+              | thanks to a technique called responsive web design.
+              //| This way, you can use the app on the go!
+        .content-block.solo
+          h2 Tech stack
+          p
+            | For you fellow hackers out there: Outfolio is built using
+            | <a href='http://documentcloud.github.com/backbone/'>Backbone</a>,
+            | <a href='http://nodejs.org/'>Node</a> with 
+            | <a href='http://expressjs.com/'>Express</a>, and
+            | <a href='http://www.mongodb.org/'>MongoDB</a>; it's written in
+            | <a href='http://coffeescript.org/'>CoffeeScript</a>, 
+            | <a href='http://jade-lang.com/'>Jade</a>, and 
+            | <a href='http://lesscss.org/'>LESS</a>; it runs on
+            | <a href='http://www.heroku.com/'>Heroku</a>. 
+            | The code is open-source on 
+            | <a href='https://github.com/nicolahery'>GitHub</a>.
+
+    #footer
+      .container
+        #why-google.footnote
+          | <strong>* Google log in:</strong> 
+          | Logging in via Google means you don't have to remember yet another login password! 
+          | Outfolio only gets basic information from Google, such as your name and email address, that's all.
+          | No spam! You won't receive any emails from Outfolio without prior approval from you.
+          | You have complete control: if you want, you can always revoke Outfolio's access by following Google's guidelines 
+          | <a href='https://www.google.com/support/accounts/bin/answer.py?hl=en&answer=43437&p=tooltip#'>here</a>.
+        .made-by.group
+          .name
+            | Made by Nicolas Hery
+          .links
+            | <a href='https://twitter.com/nicolahery'>Twitter</a> &middot;
+            | <a href='https://github.com/nicolahery'>GitHub</a> &middot; 
+            | <a href='http://www.linkedin.com/in/nicolashery'>LinkedIn</a>
