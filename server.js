@@ -10,7 +10,7 @@
 
   port = process.env.PORT || 3000;
 
-  mongodbUri = process.env.MONGODB_URI || 'mongodb://localhost/outfolio';
+  mongodbUri = process.env.MONGOLAB_URI || 'mongodb://localhost/outfolio';
 
   googleClientId = process.env.GOOGLE_CLIENTID || '484129397477.apps.googleusercontent.com';
 

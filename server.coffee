@@ -4,7 +4,7 @@ everyauth = require 'everyauth'
 
 # Environment variables for config
 port = process.env.PORT or 3000
-mongodbUri = process.env.MONGODB_URI or 'mongodb://localhost/outfolio'
+mongodbUri = process.env.MONGOLAB_URI or 'mongodb://localhost/outfolio'
 googleClientId = process.env.GOOGLE_CLIENTID or '484129397477.apps.googleusercontent.com'
 googleClientSecret = process.env.GOOGLE_CLIENTSECRET or 'oVZOq-Ad1MNFHw9jNpOgWa0T'
 
