@@ -22,4 +22,4 @@ require ['app', 'router', 'session', 'dispatcher', 'demo', 'views/application_vi
   Backbone.history.start({pushState: true})
 
   # Attach the app to the window for debugging
-  window.App = App
+  #window.App = App

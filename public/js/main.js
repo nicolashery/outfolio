@@ -16,10 +16,9 @@
       App.applicationView = new ApplicationView();
       return $('body').prepend(App.applicationView.$el);
     });
-    Backbone.history.start({
+    return Backbone.history.start({
       pushState: true
     });
-    return window.App = App;
   });
 
 }).call(this);

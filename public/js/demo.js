@@ -10,7 +10,6 @@
       Demo.prototype.responseDelay = 0;
 
       function Demo() {
-        console.debug('Demo#initialize');
         if (this.active) {
           this.load();
         }
@@ -19,7 +18,6 @@
       Demo.prototype.load = function() {
         var demoCards, demoUser,
           _this = this;
-        console.debug('Demo#load');
         App.user = App.user || new User();
         App.cards = App.cards || new Cards();
         App.card = App.card || new Card();
@@ -121,12 +119,10 @@
           }
         ];
         App.user.demo.load = function() {
-          console.debug('user#demo#load');
           return App.user.set(demoUser);
         };
         App.cards.demo.fetch = function(options) {
           var complete, error, success, triggerError;
-          console.debug('cards#demo#fetch loading');
           App.cards.demo.fetched = true;
           triggerError = false;
           options = options ? options : {};
@@ -135,7 +131,6 @@
           complete = options.complete;
           return setTimeout(function() {
             if (triggerError) {
-              console.debug('cards#demo#fetch error');
               $('body').trigger('ajaxError');
               if (error) {
                 error();
@@ -145,7 +140,6 @@
               }
               return false;
             } else {
-              console.debug('cards#demo#fetch success');
               App.cards.reset(demoCards);
               $('body').trigger('ajaxSuccess');
               if (success) {
@@ -160,7 +154,6 @@
         };
         App.cards.demo.create = function(card, options) {
           var at, complete, error, silent, success, triggerError;
-          console.debug("cards#demo#create loading");
           triggerError = false;
           options = options ? options : {};
           success = options.success;
@@ -177,7 +170,6 @@
           });
           setTimeout(function() {
             if (triggerError) {
-              console.debug("cards#demo#create error");
               $('body').trigger('ajaxError');
               if (error) {
                 error();
@@ -187,7 +179,6 @@
               }
               return false;
             } else {
-              console.debug("cards#demo#create success");
               $('body').trigger('ajaxSuccess');
               if (success) {
                 success();
@@ -202,7 +193,6 @@
         };
         App.card.demo.fetch = function(options) {
           var complete, error, id, success, triggerError;
-          console.debug('card#demo#fetch loading');
           App.card.demo.fetched = true;
           id = App.card.id;
           triggerError = false;
@@ -212,7 +202,6 @@
           complete = options.complete;
           return setTimeout(function() {
             if (triggerError) {
-              console.debug('card#demo#fetch error');
               $('body').trigger('ajaxError');
               if (error) {
                 error();
@@ -222,7 +211,6 @@
               }
               return false;
             } else {
-              console.debug('card#demo#fetch success');
               App.card.set(_.filter(demoCards, function(card) {
                 return card.id === id;
               })[0]);
@@ -239,7 +227,6 @@
         };
         App.sharedCards.demo.fetch = function(options) {
           var complete, error, success, triggerError;
-          console.debug('sharedCards#demo#fetch loading');
           triggerError = false;
           options = options ? options : {};
           success = options.success;
@@ -247,7 +234,6 @@
           complete = options.complete;
           return setTimeout(function() {
             if (triggerError) {
-              console.debug('sharedCards#demo#fetch error');
               $('body').trigger('ajaxError');
               if (error) {
                 error();
@@ -257,7 +243,6 @@
               }
               return false;
             } else {
-              console.debug('sharedCards#demo#fetch success');
               App.sharedCards.reset(demoCards);
               $('body').trigger('ajaxSuccess');
               if (success) {
@@ -272,7 +257,6 @@
         };
         App.sharedCard.demo.fetch = function(options) {
           var complete, error, id, success, triggerError;
-          console.debug('sharedCard#demo#fetch loading');
           App.sharedCard.demo.fetched = true;
           id = App.sharedCard.id;
           triggerError = false;
@@ -282,7 +266,6 @@
           complete = options.complete;
           return setTimeout(function() {
             if (triggerError) {
-              console.debug('sharedCard#demo#fetch error');
               $('body').trigger('ajaxError');
               if (error) {
                 error();
@@ -292,7 +275,6 @@
               }
               return false;
             } else {
-              console.debug('sharedCard#demo#fetch success');
               App.sharedCard.set(_.filter(demoCards, function(card) {
                 return card.id === id;
               })[0]);
@@ -309,7 +291,6 @@
         };
         App.owner.demo.fetch = function(options) {
           var complete, error, success, triggerError;
-          console.debug('owner#demo#fetch loading');
           triggerError = false;
           options = options ? options : {};
           success = options.success;
@@ -317,7 +298,6 @@
           complete = options.complete;
           return setTimeout(function() {
             if (triggerError) {
-              console.debug('owner#demo#fetch error');
               $('body').trigger('ajaxError');
               if (error) {
                 error();
@@ -327,7 +307,6 @@
               }
               return false;
             } else {
-              console.debug('owner#demo#fetch success');
               App.owner.set(demoUser);
               $('body').trigger('ajaxSuccess');
               if (success) {
@@ -348,7 +327,6 @@
       };
 
       Demo.prototype.unload = function() {
-        console.debug('Demo#unload');
         App.user.demo = null;
         App.cards.demo = null;
         App.card.demo = null;

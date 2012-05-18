@@ -21,7 +21,6 @@
 
       CardView.prototype.initialize = function(id) {
         var card, cardJson;
-        console.debug('CardView#initialize');
         this.model = App.card = App.card || new Card();
         this.model.on('change', this.render);
         if (id === this.model.id) {
@@ -38,14 +37,12 @@
       };
 
       CardView.prototype.render = function() {
-        console.debug('CardView#render');
         this.$el.html(this.template(this.model.toJSON()));
         return this;
       };
 
       CardView.prototype.index = function(id) {
         var card, loader, _ref;
-        console.debug('CardView#index', id);
         card = (_ref = App.cards) != null ? _ref.get(id) : void 0;
         if (card) {
           if (card !== this.model) {

@@ -7,7 +7,7 @@ define ['app', 'models/card'], (App, Card) ->
     template: jade.templates.card
 
     initialize: (id) ->
-      console.debug 'CardView#initialize'
+      #console.debug 'CardView#initialize'
       # Create model if doesn't exist already
       @model = App.card = App.card or new Card()
 
@@ -30,13 +30,13 @@ define ['app', 'models/card'], (App, Card) ->
             @model.set card
 
     render: =>
-      console.debug 'CardView#render'
+      #console.debug 'CardView#render'
       @$el.html @template(@model.toJSON())
       @
 
     # Show a card by id
     index: (id) ->
-      console.debug 'CardView#index', id
+      #console.debug 'CardView#index', id
       # Always check if card is in collection
       card = App.cards?.get(id)
       if card

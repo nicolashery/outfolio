@@ -10,14 +10,12 @@
       Session.prototype.authenticated = false;
 
       function Session(user) {
-        console.debug('Session#initialize');
         App.user = new User();
         App.notifications = new Notifications();
       }
 
       Session.prototype.load = function() {
         var userJson;
-        console.debug('Session#load');
         userJson = $('#user-json').remove().text();
         if (userJson) {
           if (userJson === 'demo') {

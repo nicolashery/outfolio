@@ -21,7 +21,6 @@
 
       CardShareView.prototype.initialize = function(id) {
         var card, cardJson;
-        console.debug('CardShareView#initialize');
         this.model = App.card = App.card || new Card();
         this.model.on('change', this.render);
         if (id === this.model.id) {
@@ -39,8 +38,7 @@
 
       CardShareView.prototype.render = function() {
         var link;
-        console.debug('CardShareView#render');
-        link = window.location.origin + '/shared/' + this.model.get('owner').id;
+        link = window.location.origin + '/shared/' + this.model.get('owner')._id;
         link += '/card/' + this.model.id;
         this.$el.html(this.template({
           name: this.model.get('name'),
@@ -51,7 +49,6 @@
 
       CardShareView.prototype.index = function(id) {
         var card, loader, _ref;
-        console.debug('CardShareView#index', id);
         card = (_ref = App.cards) != null ? _ref.get(id) : void 0;
         if (card) {
           if (card !== this.model) {

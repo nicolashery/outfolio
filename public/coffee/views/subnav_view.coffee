@@ -10,7 +10,7 @@ define ['app'], (App) ->
     currentView: null
 
     initialize: ->
-      console.debug 'SubnavView#initialize'
+      #console.debug 'SubnavView#initialize'
 
     # Show a view, closing the current one if any
     show: (view) ->
@@ -21,7 +21,7 @@ define ['app'], (App) ->
         # Re-bind DOM events to view
         view.delegateEvents()
         # Show the new view's element and update current view
-        console.debug 'SubnavView#show'
+        #console.debug 'SubnavView#show'
         @$el.html view.$el
         @currentView = view
       @
@@ -31,7 +31,7 @@ define ['app'], (App) ->
       # Don't try to close if no views 
       # (ex: there is no current view showing yet)
       if @currentView
-        console.debug 'SubnavView#close'
+        #console.debug 'SubnavView#close'
         @currentView.undelegateEvents()
         @currentView.remove()
         @currentView = null

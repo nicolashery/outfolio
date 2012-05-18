@@ -11,14 +11,14 @@ define ['app', 'models/user', 'models/notifications'], (App, User, Notifications
     authenticated: false
 
     constructor: (user) ->
-      console.debug 'Session#initialize'
+      #console.debug 'Session#initialize'
       # Create session models
       App.user = new User()
       App.notifications = new Notifications()
 
     # If server has authenticated, load bootstrapped user in DOM
     load: ->
-      console.debug 'Session#load'
+      #console.debug 'Session#load'
       # Grab user json data from DOM (and remove from DOM when done)
       userJson = $('#user-json').remove().text()
       if userJson

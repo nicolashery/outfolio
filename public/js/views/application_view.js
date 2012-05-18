@@ -16,7 +16,6 @@
       ApplicationView.prototype.id = 'js-application';
 
       ApplicationView.prototype.initialize = function() {
-        console.debug('ApplicationView#initialize');
         App.navigationView = new NavigationView();
         App.notificationsView = new NotificationsView();
         App.subnavView = new SubnavView();

@@ -28,9 +28,7 @@
         'shared/:shareId/card/:cardId': 'sharedCard'
       };
 
-      Router.prototype.initialize = function() {
-        return console.debug('Router#initialize');
-      };
+      Router.prototype.initialize = function() {};
 
       Router.prototype.follow = function(e) {
         var $el, fragment;
@@ -43,12 +41,10 @@
       };
 
       Router.prototype.index = function() {
-        console.debug('----- Router#index ------');
         return this.cards();
       };
 
       Router.prototype.cards = function() {
-        console.debug('----- Router#cards -----');
         App.subnavCardsView = App.subnavCardsView || new SubnavCardsView();
         App.cardsView = App.cardsView || new CardsView();
         App.navigationView.cards();
@@ -57,7 +53,6 @@
       };
 
       Router.prototype.cardsNew = function() {
-        console.debug('----- Router#cardsNew -----');
         App.subnavCardsView = App.subnavCardsView || new SubnavCardsView();
         App.cardsNewView = App.cardsNewView || new CardsNewView();
         App.navigationView.cards();
@@ -66,7 +61,6 @@
       };
 
       Router.prototype.cardsShare = function() {
-        console.debug('----- Router#cardsShare -----');
         App.subnavCardsView = App.subnavCardsView || new SubnavCardsView();
         App.cardsShareView = App.cardsShareView || new CardsShareView();
         App.navigationView.cards();
@@ -75,7 +69,6 @@
       };
 
       Router.prototype.card = function(id) {
-        console.debug("----- Router#card/" + id + " -----");
         App.subnavCardsView = App.subnavCardsView || new SubnavCardsView();
         App.cardView = App.cardView || new CardView(id);
         App.navigationView.cards();
@@ -84,7 +77,6 @@
       };
 
       Router.prototype.cardEdit = function(id) {
-        console.debug("----- Router#card/" + id + "/edit -----");
         App.subnavCardsView = App.subnavCardsView || new SubnavCardsView();
         App.cardEditView = App.cardEditView || new CardEditView(id);
         App.navigationView.cards();
@@ -93,7 +85,6 @@
       };
 
       Router.prototype.cardShare = function(id) {
-        console.debug("----- Router#card/" + id + "/share -----");
         App.subnavCardsView = App.subnavCardsView || new SubnavCardsView();
         App.cardShareView = App.cardShareView || new CardShareView(id);
         App.navigationView.cards();
@@ -102,7 +93,6 @@
       };
 
       Router.prototype.shared = function(shareId) {
-        console.debug("----- Router#shared/" + shareId + " -----");
         App.subnavCardsView = App.subnavCardsView || new SubnavCardsView();
         App.sharedCardsView = App.sharedCardsView || new SharedCardsView(shareId);
         App.navigationView.cards();
@@ -111,7 +101,6 @@
       };
 
       Router.prototype.sharedCard = function(shareId, cardId) {
-        console.debug("----- Router#shared/" + shareId + "/card/" + cardId + " -----");
         App.subnavCardsView = App.subnavCardsView || new SubnavCardsView();
         App.sharedCardView = App.sharedCardView || new SharedCardView();
         App.navigationView.cards();

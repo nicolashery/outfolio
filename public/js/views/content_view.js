@@ -20,7 +20,6 @@
       ContentView.prototype.currentView = null;
 
       ContentView.prototype.initialize = function() {
-        console.debug('ContentView#initialize');
         return App.dispatcher.on('content:refresh', this.refresh);
       };
 
@@ -28,7 +27,6 @@
         if (view !== this.currentView) {
           this.close();
           view.delegateEvents();
-          console.debug('ContentView#show');
           this.$el.html(view.$el);
           this.currentView = view;
         }
@@ -37,7 +35,6 @@
 
       ContentView.prototype.close = function() {
         if (this.currentView) {
-          console.debug('ContentView#close');
           this.currentView.undelegateEvents();
           this.currentView.remove();
           this.currentView = null;

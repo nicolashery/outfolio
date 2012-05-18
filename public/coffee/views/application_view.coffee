@@ -8,7 +8,7 @@ define ['app', 'views/navigation_view', 'views/notifications_view', 'views/subna
     id: 'js-application'
 
     initialize: ->
-      console.debug 'ApplicationView#initialize'
+      #console.debug 'ApplicationView#initialize'
 
       # Construct sub-views
       App.navigationView = new NavigationView()

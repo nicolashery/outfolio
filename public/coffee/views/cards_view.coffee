@@ -11,7 +11,7 @@ define ['app', 'models/cards', 'views/cardsmall_view'], (App, Cards, CardSmallVi
       'click a.js-show': 'routerFollow'
 
     initialize: ->
-      console.debug 'CardsView#initialize'
+      #console.debug 'CardsView#initialize'
       # Create collection if doesn't exist already
       isNew = (not App.cards) or (App.cards.demo? and not App.cards.demo.fetched)
       @collection = App.cards = App.cards or new Cards()
@@ -58,7 +58,7 @@ define ['app', 'models/cards', 'views/cardsmall_view'], (App, Cards, CardSmallVi
 
     # Add one card to DOM list
     addOne: (card, addMethod) =>
-      console.debug 'CardsView#addOne', card.get('name')
+      #console.debug 'CardsView#addOne', card.get('name')
       # Create card DOM element
       el = new CardSmallView({model: card}).render().$el
       # By default add element to top of list
@@ -69,7 +69,7 @@ define ['app', 'models/cards', 'views/cardsmall_view'], (App, Cards, CardSmallVi
 
     # Add all cards in collection to DOM list
     addAll: =>
-      console.debug 'CardsView#addAll'
+      #console.debug 'CardsView#addAll'
       # Show or hide the no cards message (depending on the collection length)
       @showHideNoCards()
       # First remove all cards currently in list
@@ -86,7 +86,7 @@ define ['app', 'models/cards', 'views/cardsmall_view'], (App, Cards, CardSmallVi
 
     # Method called when content refresh is requested
     refresh: ->
-      console.debug '----- CardsView#refresh -----'
+      #console.debug '----- CardsView#refresh -----'
       # Fetch fresh data from server, and view will update itself 
       if App.demo.active
         loader = App.notifications.newLoader()

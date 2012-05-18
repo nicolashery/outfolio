@@ -22,7 +22,6 @@
       NotificationsView.prototype.template = jade.templates.notifications;
 
       NotificationsView.prototype.initialize = function() {
-        console.debug('NotificationsView#initialize');
         this.collection = App.notifications;
         this.collection.on('add remove', this.render);
         return $('body').ajaxError(this.error);
@@ -30,7 +29,6 @@
 
       NotificationsView.prototype.render = function() {
         var data, _ref;
-        console.debug('NotificationsView#render');
         data = (_ref = this.collection.current()) != null ? _ref.toJSON() : void 0;
         this.$el.html(this.template({
           notification: data
@@ -41,12 +39,10 @@
       NotificationsView.prototype.error = function(e, xhr) {
         var message;
         if ((xhr != null ? xhr.status : void 0) === 404) {
-          console.debug('NotificationsView#error 404 Not Found');
           return router.navigate('', {
             trigger: true
           });
         } else {
-          console.debug('NotificationsView#error');
           message = "<strong>Oops!</strong> An error occured. It's not your fault, it's ours. Please try refreshing the page. <a href='" + window.location + "'>Refresh</a>";
           this.collection["new"]({
             message: message,

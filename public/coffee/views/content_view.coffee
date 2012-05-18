@@ -10,7 +10,7 @@ define ['app'], (App) ->
     currentView: null
 
     initialize: ->
-      console.debug 'ContentView#initialize'
+      #console.debug 'ContentView#initialize'
       # Bind application events
       App.dispatcher.on 'content:refresh', @refresh
 
@@ -23,7 +23,7 @@ define ['app'], (App) ->
         # Re-bind DOM events to view
         view.delegateEvents()
         # Show the new view's element and update current view
-        console.debug 'ContentView#show'
+        #console.debug 'ContentView#show'
         @$el.html view.$el
         @currentView = view
       @
@@ -33,7 +33,7 @@ define ['app'], (App) ->
       # Don't try to close if no views 
       # (ex: there is no current view showing yet)
       if @currentView
-        console.debug 'ContentView#close'
+        #console.debug 'ContentView#close'
         @currentView.undelegateEvents()
         @currentView.remove()
         @currentView = null

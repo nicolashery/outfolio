@@ -11,12 +11,12 @@ define ['app'], (App) ->
       'click .js-cards a': 'routerFollow'
 
     initialize: ->
-      console.debug 'NavigationView#initialize'
+      #console.debug 'NavigationView#initialize'
       # No data to fetch, so render immediately
       @render()
 
     render: ->
-      console.debug 'NavigationView#render'
+      #console.debug 'NavigationView#render'
       # We need to construct the data for template a little bit
       data = {}
       data.authenticated = App.session.authenticated
@@ -32,6 +32,6 @@ define ['app'], (App) ->
     # ------
 
     cards: ->
-      console.debug 'NavigationView#cards'
+      #console.debug 'NavigationView#cards'
       @$('.js-cards').addClass('active')
 

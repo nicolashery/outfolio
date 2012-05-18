@@ -29,7 +29,6 @@
 
       CardsView.prototype.initialize = function() {
         var cardsJson, isNew, loader;
-        console.debug('CardsView#initialize');
         isNew = (!App.cards) || ((App.cards.demo != null) && !App.cards.demo.fetched);
         this.collection = App.cards = App.cards || new Cards();
         this.collection.on('reset', this.addAll);
@@ -71,7 +70,6 @@
 
       CardsView.prototype.addOne = function(card, addMethod) {
         var el;
-        console.debug('CardsView#addOne', card.get('name'));
         el = new CardSmallView({
           model: card
         }).render().$el;
@@ -84,7 +82,6 @@
 
       CardsView.prototype.addAll = function() {
         var _this = this;
-        console.debug('CardsView#addAll');
         this.showHideNoCards();
         this.$list.children().remove();
         return this.collection.each(function(card) {
@@ -102,7 +99,6 @@
 
       CardsView.prototype.refresh = function() {
         var loader;
-        console.debug('----- CardsView#refresh -----');
         if (App.demo.active) {
           loader = App.notifications.newLoader();
           return this.collection.demo.fetch({

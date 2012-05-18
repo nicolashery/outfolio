@@ -28,7 +28,6 @@
 
       CardsNewView.prototype.initialize = function() {
         var cardsJson;
-        console.debug('CardsNewView#initialize');
         cardsJson = $('#cards-json').remove().text();
         if (cardsJson) {
           App.cards = App.cards || new Cards();
@@ -38,7 +37,6 @@
       };
 
       CardsNewView.prototype.render = function() {
-        console.debug('CardsNewView#render');
         this.$el.html(this.template());
         return this;
       };
@@ -52,7 +50,6 @@
 
       CardsNewView.prototype.add = function(e) {
         var card, isNew, loader;
-        console.debug('CardsNewView#add');
         e.preventDefault();
         card = {
           name: this.$el.find("input[name='name']").val(),
@@ -109,7 +106,6 @@
       };
 
       CardsNewView.prototype.cancel = function(e) {
-        console.debug('CardsNewView#cancel');
         e.preventDefault();
         this.clearForm();
         App.router.navigate('cards', {

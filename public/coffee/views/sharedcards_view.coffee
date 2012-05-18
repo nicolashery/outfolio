@@ -14,7 +14,7 @@ define ['app', 'models/sharedcards', 'views/sharedcardsmall_view'], (App, Shared
     shareId: null
 
     initialize: (shareId) ->
-      console.debug 'SharedCardsView#initialize'
+      #console.debug 'SharedCardsView#initialize'
       # Create collection if doesn't exist already
       @collection = App.sharedCards = App.sharedCards or new SharedCards()
 
@@ -42,7 +42,7 @@ define ['app', 'models/sharedcards', 'views/sharedcardsmall_view'], (App, Shared
 
     # Add one card to DOM list
     addOne: (card, addMethod) =>
-      console.debug 'SharedCardsView#addOne', card.get('name')
+      #console.debug 'SharedCardsView#addOne', card.get('name')
       # Create card DOM element
       el = new SharedCardSmallView({model: card}).render().$el
       # By default add element to top of list
@@ -53,7 +53,7 @@ define ['app', 'models/sharedcards', 'views/sharedcardsmall_view'], (App, Shared
 
     # Add all cards in collection to DOM list
     addAll: =>
-      console.debug 'SharedCardsView#addAll'
+      #console.debug 'SharedCardsView#addAll'
       # Show or hide the no cards message (depending on the collection length)
       @showHideNoCards()
       # First remove all cards currently in list
@@ -70,7 +70,7 @@ define ['app', 'models/sharedcards', 'views/sharedcardsmall_view'], (App, Shared
 
     # Method called when content refresh is requested
     refresh: ->
-      console.debug '----- SharedCardsView#refresh -----'
+      #console.debug '----- SharedCardsView#refresh -----'
       # Fetch fresh data from server, and view will update itself 
       if App.demo.active
         # We would actually construct url with share id, 
@@ -90,7 +90,7 @@ define ['app', 'models/sharedcards', 'views/sharedcardsmall_view'], (App, Shared
 
     # Load cards from a share id
     index: (shareId) ->
-      console.debug 'SharedCardsView#index', shareId
+      #console.debug 'SharedCardsView#index', shareId
       # Check if we are not alread displaying this share id
       unless @shareId == shareId
         # Set new share id and refresh

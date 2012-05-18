@@ -17,13 +17,10 @@
 
       CardsShareView.prototype.template = jade.templates.cardsshare;
 
-      CardsShareView.prototype.initialize = function() {
-        return console.debug('CardsShareView#initialize');
-      };
+      CardsShareView.prototype.initialize = function() {};
 
       CardsShareView.prototype.render = function() {
         var link;
-        console.debug('CardsShareView#render');
         link = window.location.origin + '/shared/' + App.user.id;
         this.$el.html(this.template({
           link: link

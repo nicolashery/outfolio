@@ -11,7 +11,7 @@ define ['app', 'models/card'], (App, Card) ->
       'click .js-cancel': 'cancel'
 
     initialize: (id) ->
-      console.debug 'CardEditView#initialize'
+      #console.debug 'CardEditView#initialize'
       # Create model if doesn't exist already
       @model = App.card = App.card or new Card()
       # Whenever the card changes, re-render
@@ -31,13 +31,13 @@ define ['app', 'models/card'], (App, Card) ->
             @model.set card
 
     render: =>
-      console.debug 'CardEditView#render'
+      #console.debug 'CardEditView#render'
       @$el.html @template(@model.toJSON())
       @
 
     # Show a card edit form by id
     index: (id) ->
-      console.debug 'CardEditView#index', id
+      #console.debug 'CardEditView#index', id
       # Always check if card is in collection
       card = App.cards?.get(id)
       if card
@@ -85,7 +85,7 @@ define ['app', 'models/card'], (App, Card) ->
 
     # Save changes and navigate back to card view
     save: (e) =>
-      console.debug 'CardEditView#save'
+      #console.debug 'CardEditView#save'
       e.preventDefault()
       # Set model attributes with new values and save to server
       if App.demo.active
@@ -108,7 +108,7 @@ define ['app', 'models/card'], (App, Card) ->
      
     # Discard changes and navigate back to card view
     cancel: (e) =>
-      console.debug 'CardEditView#cancel'
+      #console.debug 'CardEditView#cancel'
       e.preventDefault()
       # Re-render the view to reset inputs to original values
       @render()

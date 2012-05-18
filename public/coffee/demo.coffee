@@ -11,13 +11,13 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
     responseDelay: 0
 
     constructor: ->
-      console.debug 'Demo#initialize'
+      #console.debug 'Demo#initialize'
       # If active is already set to true, load demo
       @load() if @active
 
     # Load demo data and create demo functions on models
     load: ->
-      console.debug 'Demo#load'
+      #console.debug 'Demo#load'
 
       # Create app models if they don't exist yet
       App.user = App.user or new User()
@@ -101,11 +101,11 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
 
       # Add demo functions
       App.user.demo.load = ->
-        console.debug 'user#demo#load'
+        #console.debug 'user#demo#load'
         App.user.set demoUser
 
       App.cards.demo.fetch = (options) =>
-        console.debug 'cards#demo#fetch loading'
+        #console.debug 'cards#demo#fetch loading'
         # Indicate for the demo that data has already been fetched
         App.cards.demo.fetched = true
         triggerError = false
@@ -115,13 +115,13 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         complete = options.complete
         setTimeout =>
           if triggerError
-            console.debug 'cards#demo#fetch error'
+            #console.debug 'cards#demo#fetch error'
             $('body').trigger('ajaxError')
             error() if error
             complete() if complete
             false
           else
-            console.debug 'cards#demo#fetch success'
+            #console.debug 'cards#demo#fetch success'
             App.cards.reset demoCards
             $('body').trigger('ajaxSuccess')
             success() if success
@@ -130,7 +130,7 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         , @responseDelay
 
       App.cards.demo.create = (card, options) =>
-        console.debug "cards#demo#create loading"
+        #console.debug "cards#demo#create loading"
         triggerError = false
         options = if options then options else {}
         success = options.success
@@ -144,13 +144,13 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         App.cards.add card, {at: at, silent: silent}
         setTimeout =>
           if triggerError
-            console.debug "cards#demo#create error"
+            #console.debug "cards#demo#create error"
             $('body').trigger('ajaxError')
             error() if error
             complete() if complete
             false
           else
-            console.debug "cards#demo#create success"
+            #console.debug "cards#demo#create success"
             $('body').trigger('ajaxSuccess')
             success() if success
             complete() if complete
@@ -158,7 +158,7 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         @responseDelay
 
       App.card.demo.fetch = (options) =>
-        console.debug 'card#demo#fetch loading'
+        #console.debug 'card#demo#fetch loading'
         # Indicate for the demo that data has already been fetched
         App.card.demo.fetched = true
         # Grab the id of the card we are trying to fetch
@@ -170,13 +170,13 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         complete = options.complete
         setTimeout =>
           if triggerError
-            console.debug 'card#demo#fetch error'
+            #console.debug 'card#demo#fetch error'
             $('body').trigger('ajaxError')
             error() if error
             complete() if complete
             false
           else
-            console.debug 'card#demo#fetch success'
+            #console.debug 'card#demo#fetch success'
             App.card.set _.filter(demoCards, (card) -> card.id == id)[0]
             $('body').trigger('ajaxSuccess')
             success() if success
@@ -185,7 +185,7 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         , @responseDelay
 
       App.sharedCards.demo.fetch = (options) =>
-        console.debug 'sharedCards#demo#fetch loading'
+        #console.debug 'sharedCards#demo#fetch loading'
         triggerError = false
         options = if options then options else {}
         success = options.success
@@ -193,13 +193,13 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         complete = options.complete
         setTimeout =>
           if triggerError
-            console.debug 'sharedCards#demo#fetch error'
+            #console.debug 'sharedCards#demo#fetch error'
             $('body').trigger('ajaxError')
             error() if error
             complete() if complete
             false
           else
-            console.debug 'sharedCards#demo#fetch success'
+            #console.debug 'sharedCards#demo#fetch success'
             App.sharedCards.reset demoCards
             $('body').trigger('ajaxSuccess')
             success() if success
@@ -208,7 +208,7 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         , @responseDelay
 
       App.sharedCard.demo.fetch = (options) =>
-        console.debug 'sharedCard#demo#fetch loading'
+        #console.debug 'sharedCard#demo#fetch loading'
         # Indicate for the demo that data has already been fetched
         App.sharedCard.demo.fetched = true
         # Grab the id of the card we are trying to fetch
@@ -220,13 +220,13 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         complete = options.complete
         setTimeout =>
           if triggerError
-            console.debug 'sharedCard#demo#fetch error'
+            #console.debug 'sharedCard#demo#fetch error'
             $('body').trigger('ajaxError')
             error() if error
             complete() if complete
             false
           else
-            console.debug 'sharedCard#demo#fetch success'
+            #console.debug 'sharedCard#demo#fetch success'
             App.sharedCard.set _.filter(demoCards, (card) -> card.id == id)[0]
             $('body').trigger('ajaxSuccess')
             success() if success
@@ -235,7 +235,7 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         , @responseDelay
 
       App.owner.demo.fetch = (options) =>
-        console.debug 'owner#demo#fetch loading'
+        #console.debug 'owner#demo#fetch loading'
         triggerError = false
         options = if options then options else {}
         success = options.success
@@ -243,13 +243,13 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
         complete = options.complete
         setTimeout =>
           if triggerError
-            console.debug 'owner#demo#fetch error'
+            #console.debug 'owner#demo#fetch error'
             $('body').trigger('ajaxError')
             error() if error
             complete() if complete
             false
           else
-            console.debug 'owner#demo#fetch success'
+            #console.debug 'owner#demo#fetch success'
             App.owner.set demoUser
             $('body').trigger('ajaxSuccess')
             success() if success
@@ -267,7 +267,7 @@ define ['app', 'models/user', 'models/cards', 'models/card', 'models/owner', 'mo
 
     # Remove demo functions and switch off demo mode
     unload: ->
-      console.debug 'Demo#unload'
+      #console.debug 'Demo#unload'
       App.user.demo = null
       App.cards.demo = null
       App.card.demo = null

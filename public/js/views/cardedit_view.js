@@ -30,7 +30,6 @@
 
       CardEditView.prototype.initialize = function(id) {
         var card, cardJson;
-        console.debug('CardEditView#initialize');
         this.model = App.card = App.card || new Card();
         this.model.on('change', this.render);
         if (id === this.model.id) {
@@ -47,14 +46,12 @@
       };
 
       CardEditView.prototype.render = function() {
-        console.debug('CardEditView#render');
         this.$el.html(this.template(this.model.toJSON()));
         return this;
       };
 
       CardEditView.prototype.index = function(id) {
         var card, loader, _ref;
-        console.debug('CardEditView#index', id);
         card = (_ref = App.cards) != null ? _ref.get(id) : void 0;
         if (card) {
           if (card !== this.model) {
@@ -101,7 +98,6 @@
       };
 
       CardEditView.prototype.save = function(e) {
-        console.debug('CardEditView#save');
         e.preventDefault();
         if (App.demo.active) {
           this.model.set({
@@ -124,7 +120,6 @@
       };
 
       CardEditView.prototype.cancel = function(e) {
-        console.debug('CardEditView#cancel');
         e.preventDefault();
         this.render();
         return App.router.navigate("card/" + this.model.id, {

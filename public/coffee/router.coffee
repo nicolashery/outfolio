@@ -17,7 +17,7 @@ define ['app', 'views/subnavcards_view', 'views/cards_view', 'views/cardsnew_vie
       'shared/:shareId/card/:cardId': 'sharedCard'
 
     initialize: ->
-      console.debug 'Router#initialize'
+      #console.debug 'Router#initialize'
 
     # Function for views to bind to 'click' events on elements
     # with a 'href' attribute that allows router to follow that route
@@ -35,11 +35,11 @@ define ['app', 'views/subnavcards_view', 'views/cards_view', 'views/cardsnew_vie
     # ------
 
     index: ->
-      console.debug '----- Router#index ------'
+      #console.debug '----- Router#index ------'
       @cards()
 
     cards: ->
-      console.debug '----- Router#cards -----'
+      #console.debug '----- Router#cards -----'
       # Create views
       App.subnavCardsView = App.subnavCardsView or new SubnavCardsView()
       App.cardsView = App.cardsView or new CardsView()
@@ -49,7 +49,7 @@ define ['app', 'views/subnavcards_view', 'views/cards_view', 'views/cardsnew_vie
       App.contentView.show App.cardsView
 
     cardsNew: ->
-      console.debug '----- Router#cardsNew -----'
+      #console.debug '----- Router#cardsNew -----'
       # Create views
       App.subnavCardsView = App.subnavCardsView or new SubnavCardsView()
       App.cardsNewView = App.cardsNewView or new CardsNewView()
@@ -59,7 +59,7 @@ define ['app', 'views/subnavcards_view', 'views/cards_view', 'views/cardsnew_vie
       App.contentView.show App.cardsNewView
 
     cardsShare: ->
-      console.debug '----- Router#cardsShare -----'
+      #console.debug '----- Router#cardsShare -----'
       # Create views
       App.subnavCardsView = App.subnavCardsView or new SubnavCardsView()
       App.cardsShareView = App.cardsShareView or new CardsShareView()
@@ -70,7 +70,7 @@ define ['app', 'views/subnavcards_view', 'views/cards_view', 'views/cardsnew_vie
       App.contentView.show App.cardsShareView.render()
 
     card: (id) ->
-      console.debug "----- Router#card/#{id} -----"
+      #console.debug "----- Router#card/#{id} -----"
       # Create views
       App.subnavCardsView = App.subnavCardsView or new SubnavCardsView()
       App.cardView = App.cardView or new CardView(id)
@@ -81,7 +81,7 @@ define ['app', 'views/subnavcards_view', 'views/cards_view', 'views/cardsnew_vie
       App.contentView.show App.cardView.index(id)
 
     cardEdit: (id) ->
-      console.debug "----- Router#card/#{id}/edit -----"
+      #console.debug "----- Router#card/#{id}/edit -----"
       # Create views
       App.subnavCardsView = App.subnavCardsView or new SubnavCardsView()
       App.cardEditView = App.cardEditView or new CardEditView(id)
@@ -92,7 +92,7 @@ define ['app', 'views/subnavcards_view', 'views/cards_view', 'views/cardsnew_vie
       App.contentView.show App.cardEditView.index(id)
 
     cardShare: (id) ->
-      console.debug "----- Router#card/#{id}/share -----"
+      #console.debug "----- Router#card/#{id}/share -----"
       # Create views
       App.subnavCardsView = App.subnavCardsView or new SubnavCardsView()
       App.cardShareView = App.cardShareView or new CardShareView(id)
@@ -103,7 +103,7 @@ define ['app', 'views/subnavcards_view', 'views/cards_view', 'views/cardsnew_vie
       App.contentView.show App.cardShareView.index(id)
 
     shared: (shareId) ->
-      console.debug "----- Router#shared/#{shareId} -----"
+      #console.debug "----- Router#shared/#{shareId} -----"
       # Create views
       App.subnavCardsView = App.subnavCardsView or new SubnavCardsView()
       App.sharedCardsView = App.sharedCardsView or new SharedCardsView(shareId)
@@ -113,7 +113,7 @@ define ['app', 'views/subnavcards_view', 'views/cards_view', 'views/cardsnew_vie
       App.contentView.show App.sharedCardsView.index(shareId)
 
     sharedCard: (shareId, cardId) ->
-      console.debug "----- Router#shared/#{shareId}/card/#{cardId} -----"
+      #console.debug "----- Router#shared/#{shareId}/card/#{cardId} -----"
       # Create views
       App.subnavCardsView = App.subnavCardsView or new SubnavCardsView()
       App.sharedCardView = App.sharedCardView or new SharedCardView()

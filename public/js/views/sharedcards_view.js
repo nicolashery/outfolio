@@ -31,7 +31,6 @@
 
       SharedCardsView.prototype.initialize = function(shareId) {
         var sharedCardsJson;
-        console.debug('SharedCardsView#initialize');
         this.collection = App.sharedCards = App.sharedCards || new SharedCards();
         this.collection.on('reset', this.addAll);
         this.$el.html(this.template());
@@ -50,7 +49,6 @@
 
       SharedCardsView.prototype.addOne = function(card, addMethod) {
         var el;
-        console.debug('SharedCardsView#addOne', card.get('name'));
         el = new SharedCardSmallView({
           model: card
         }).render().$el;
@@ -63,7 +61,6 @@
 
       SharedCardsView.prototype.addAll = function() {
         var _this = this;
-        console.debug('SharedCardsView#addAll');
         this.showHideNoCards();
         this.$list.children().remove();
         return this.collection.each(function(card) {
@@ -81,7 +78,6 @@
 
       SharedCardsView.prototype.refresh = function() {
         var loader;
-        console.debug('----- SharedCardsView#refresh -----');
         if (App.demo.active) {
           loader = App.notifications.newLoader();
           return this.collection.demo.fetch({
@@ -101,7 +97,6 @@
       };
 
       SharedCardsView.prototype.index = function(shareId) {
-        console.debug('SharedCardsView#index', shareId);
         if (this.shareId !== shareId) {
           this.shareId = shareId;
           this.refresh();

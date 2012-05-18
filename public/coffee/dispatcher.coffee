@@ -7,4 +7,4 @@ define ->
     _(Dispatcher.prototype).defaults Backbone.Events
 
     constructor: ->
-      console.debug 'Dispatcher#initialize'
+      #console.debug 'Dispatcher#initialize'

@@ -22,13 +22,11 @@
       };
 
       NavigationView.prototype.initialize = function() {
-        console.debug('NavigationView#initialize');
         return this.render();
       };
 
       NavigationView.prototype.render = function() {
         var data;
-        console.debug('NavigationView#render');
         data = {};
         data.authenticated = App.session.authenticated;
         data.user = App.user.toJSON();
@@ -41,7 +39,6 @@
       };
 
       NavigationView.prototype.cards = function() {
-        console.debug('NavigationView#cards');
         return this.$('.js-cards').addClass('active');
       };
 

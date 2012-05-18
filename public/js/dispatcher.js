@@ -7,9 +7,7 @@
 
       _(Dispatcher.prototype).defaults(Backbone.Events);
 
-      function Dispatcher() {
-        console.debug('Dispatcher#initialize');
-      }
+      function Dispatcher() {}
 
       return Dispatcher;
 

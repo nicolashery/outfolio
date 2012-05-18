@@ -42,7 +42,6 @@
 
       SubnavCardsView.prototype.initialize = function() {
         var ownerJson;
-        console.debug('SubnavCardsView#initialize');
         this.data = {
           authenticated: null,
           card: null,
@@ -68,7 +67,6 @@
       };
 
       SubnavCardsView.prototype.render = function() {
-        console.debug('SubnavCardsView#render');
         this.$el.html(this.template(this.data.toJSON()));
         return this;
       };
@@ -105,7 +103,6 @@
 
       SubnavCardsView.prototype.destroy = function(e) {
         var card;
-        console.debug('SubnavCardsView#destroy');
         e.preventDefault();
         if (this.confirmDelete()) {
           card = App.card;
@@ -122,7 +119,6 @@
       };
 
       SubnavCardsView.prototype.cards = function() {
-        console.debug('SubnavCardsView#cards');
         this.data.card = null;
         this.data.owner = null;
         this.render();
@@ -131,7 +127,6 @@
       };
 
       SubnavCardsView.prototype["new"] = function() {
-        console.debug('SubnavCardsView#new');
         this.data.card = null;
         this.data.owner = null;
         this.render();
@@ -140,7 +135,6 @@
       };
 
       SubnavCardsView.prototype.share = function() {
-        console.debug('SubnavCardsView#share');
         this.data.card = null;
         this.data.owner = null;
         this.render();
@@ -149,7 +143,6 @@
       };
 
       SubnavCardsView.prototype.card = function() {
-        console.debug('SubnavCardsView#card');
         this.data.card = App.card;
         this.data.owner = null;
         this.render();
@@ -158,7 +151,6 @@
       };
 
       SubnavCardsView.prototype.edit = function() {
-        console.debug('SubnavCardsView#edit');
         this.data.card = App.card;
         this.data.owner = null;
         this.render();
@@ -167,7 +159,6 @@
       };
 
       SubnavCardsView.prototype.cardShare = function() {
-        console.debug('SubnavCardsView#cardShare');
         this.data.card = App.card;
         this.data.owner = null;
         this.render();
@@ -177,7 +168,6 @@
 
       SubnavCardsView.prototype.shared = function(shareId) {
         var _this = this;
-        console.debug('SubnavCardsView#shared', shareId);
         this.data.card = null;
         this.data.owner = App.owner;
         if (App.owner.id === shareId) {
@@ -205,7 +195,6 @@
       };
 
       SubnavCardsView.prototype.sharedCard = function() {
-        console.debug('SubnavCardsView#sharedCard');
         this.data.card = App.sharedCard;
         App.owner.set(App.sharedCard.get('owner'));
         this.data.owner = App.owner;

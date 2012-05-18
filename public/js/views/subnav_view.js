@@ -17,15 +17,12 @@
 
       SubnavView.prototype.currentView = null;
 
-      SubnavView.prototype.initialize = function() {
-        return console.debug('SubnavView#initialize');
-      };
+      SubnavView.prototype.initialize = function() {};
 
       SubnavView.prototype.show = function(view) {
         if (view !== this.currentView) {
           this.close();
           view.delegateEvents();
-          console.debug('SubnavView#show');
           this.$el.html(view.$el);
           this.currentView = view;
         }
@@ -34,7 +31,6 @@
 
       SubnavView.prototype.close = function() {
         if (this.currentView) {
-          console.debug('SubnavView#close');
           this.currentView.undelegateEvents();
           this.currentView.remove();
           this.currentView = null;

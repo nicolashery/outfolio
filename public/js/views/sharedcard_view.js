@@ -21,7 +21,6 @@
 
       SharedCardView.prototype.initialize = function() {
         var sharedCardJson;
-        console.debug('SharedCardView#initialize');
         this.model = App.sharedCard = App.sharedCard || new SharedCard();
         this.model.on('change', this.render);
         sharedCardJson = $('#sharedcard-json').remove().text();
@@ -31,14 +30,12 @@
       };
 
       SharedCardView.prototype.render = function() {
-        console.debug('SharedCardView#render');
         this.$el.html(this.template(this.model.toJSON()));
         return this;
       };
 
       SharedCardView.prototype.index = function(shareId, cardId) {
         var card, loader, _ref;
-        console.debug('SharedCardView#index', shareId, cardId);
         card = (_ref = App.sharedCards) != null ? _ref.get(cardId) : void 0;
         if (card) {
           if (card !== this.model) {

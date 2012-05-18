@@ -8,7 +8,7 @@ define ['app', 'models/sharedcard'], (App, SharedCard) ->
     template: jade.templates.card
 
     initialize: ->
-      console.debug 'SharedCardView#initialize'
+      #console.debug 'SharedCardView#initialize'
       # Create model if doesn't exist already
       @model = App.sharedCard = App.sharedCard or new SharedCard()
 
@@ -21,13 +21,13 @@ define ['app', 'models/sharedcard'], (App, SharedCard) ->
         @model.set JSON.parse(sharedCardJson)
 
     render: =>
-      console.debug 'SharedCardView#render'
+      #console.debug 'SharedCardView#render'
       @$el.html @template(@model.toJSON())
       @
 
     # Show a card by share id and card id
     index: (shareId, cardId) ->
-      console.debug 'SharedCardView#index', shareId, cardId 
+      #console.debug 'SharedCardView#index', shareId, cardId 
       # Always check if card is in collection
       card = App.sharedCards?.get(cardId)
       if card

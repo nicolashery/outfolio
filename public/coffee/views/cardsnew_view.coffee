@@ -11,7 +11,7 @@ define ['app', 'models/cards'], (App, Cards) ->
       'click .js-cancel': 'cancel'
 
     initialize: ->
-      console.debug 'CardsNewView#initialize'
+      #console.debug 'CardsNewView#initialize'
 
       # Only load cards data from DOM (if exists),
       # we will fetch from server (if needed), at card creation
@@ -26,7 +26,7 @@ define ['app', 'models/cards'], (App, Cards) ->
       @render()
 
     render: ->
-      console.debug 'CardsNewView#render'
+      #console.debug 'CardsNewView#render'
       @$el.html @template()
       @
 
@@ -39,7 +39,7 @@ define ['app', 'models/cards'], (App, Cards) ->
 
     # Add new card to collection and navigate to card list
     add: (e) =>
-      console.debug 'CardsNewView#add'
+      #console.debug 'CardsNewView#add'
       # Stop form from posting data to server
       e.preventDefault()
       # Grab data from form
@@ -86,7 +86,7 @@ define ['app', 'models/cards'], (App, Cards) ->
 
     # Clear form and navigate to card list
     cancel: (e) =>
-      console.debug 'CardsNewView#cancel'
+      #console.debug 'CardsNewView#cancel'
       # Stop form from doing anything
       e.preventDefault()
       @clearForm()

@@ -7,7 +7,7 @@ define ['app', 'models/card'], (App, Card) ->
     template: jade.templates.cardshare
 
     initialize: (id) ->
-      console.debug 'CardShareView#initialize'
+      #console.debug 'CardShareView#initialize'
       # Create model if doesn't exist already
       @model = App.card = App.card or new Card()
 
@@ -28,16 +28,16 @@ define ['app', 'models/card'], (App, Card) ->
             @model.set card
 
     render: =>
-      console.debug 'CardShareView#render'
+      #console.debug 'CardShareView#render'
       # Build share link for this card
-      link = window.location.origin + '/shared/' + @model.get('owner').id
+      link = window.location.origin + '/shared/' + @model.get('owner')._id
       link += '/card/' + @model.id
       @$el.html @template({name: @model.get('name'), link: link})
       @
 
     # Show card share link by id
     index: (id) ->
-      console.debug 'CardShareView#index', id
+      #console.debug 'CardShareView#index', id
       # Always check if card is in collection
       card = App.cards?.get(id)
       if card

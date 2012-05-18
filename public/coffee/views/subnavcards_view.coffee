@@ -21,7 +21,7 @@ define ['app', 'models/owner'], (App, Owner) ->
       'click .js-delete a': 'destroy'
 
     initialize: ->
-      console.debug 'SubnavCardsView#initialize'
+      #console.debug 'SubnavCardsView#initialize'
       # This view uses more than one models, and not all at the same time
       # so initialize a 'data' object to attach them when needed
       @data =
@@ -57,7 +57,7 @@ define ['app', 'models/owner'], (App, Owner) ->
         App.owner.set JSON.parse(ownerJson)
 
     render: =>
-      console.debug 'SubnavCardsView#render'
+      #console.debug 'SubnavCardsView#render'
       @$el.html @template(@data.toJSON())
       @
 
@@ -95,7 +95,7 @@ define ['app', 'models/owner'], (App, Owner) ->
 
     # Delete a card
     destroy: (e) ->
-      console.debug 'SubnavCardsView#destroy'
+      #console.debug 'SubnavCardsView#destroy'
       e.preventDefault()
       # First check that user confirmed delete
       if @confirmDelete()
@@ -114,7 +114,7 @@ define ['app', 'models/owner'], (App, Owner) ->
     # ------
 
     cards: ->
-      console.debug 'SubnavCardsView#cards'
+      #console.debug 'SubnavCardsView#cards'
       # Update data object
       @data.card = null
       @data.owner = null
@@ -125,7 +125,7 @@ define ['app', 'models/owner'], (App, Owner) ->
       @
 
     new: ->
-      console.debug 'SubnavCardsView#new'
+      #console.debug 'SubnavCardsView#new'
       # Update data object
       @data.card = null
       @data.owner = null
@@ -136,7 +136,7 @@ define ['app', 'models/owner'], (App, Owner) ->
       @
 
     share: ->
-      console.debug 'SubnavCardsView#share'
+      #console.debug 'SubnavCardsView#share'
       # Update data object
       @data.card = null
       @data.owner = null
@@ -147,7 +147,7 @@ define ['app', 'models/owner'], (App, Owner) ->
       @
 
     card: =>
-      console.debug 'SubnavCardsView#card'
+      #console.debug 'SubnavCardsView#card'
       # This route fires asynchronously, once card is ready
       # Update data object
       @data.card = App.card
@@ -159,7 +159,7 @@ define ['app', 'models/owner'], (App, Owner) ->
       @
 
     edit: =>
-      console.debug 'SubnavCardsView#edit'
+      #console.debug 'SubnavCardsView#edit'
       # This route fires asynchronously, once card is ready
       # Update data object
       @data.card = App.card
@@ -171,7 +171,7 @@ define ['app', 'models/owner'], (App, Owner) ->
       @
 
     cardShare: =>
-      console.debug 'SubnavCardsView#cardShare'
+      #console.debug 'SubnavCardsView#cardShare'
       # This route fires asynchronously, once card is ready
       # Update data object
       @data.card = App.card
@@ -183,7 +183,7 @@ define ['app', 'models/owner'], (App, Owner) ->
       @
 
     shared: (shareId) ->
-      console.debug 'SubnavCardsView#shared', shareId
+      #console.debug 'SubnavCardsView#shared', shareId
       # Update data object
       @data.card = null
       @data.owner = App.owner
@@ -211,7 +211,7 @@ define ['app', 'models/owner'], (App, Owner) ->
       @
 
     sharedCard: =>
-      console.debug 'SubnavCardsView#sharedCard'
+      #console.debug 'SubnavCardsView#sharedCard'
       # This route fires asynchronously, once card is ready
       # Update data object
       @data.card = App.sharedCard
