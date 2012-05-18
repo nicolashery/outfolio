@@ -11,13 +11,13 @@
     App.session = new Session();
     App.dispatcher = new Dispatcher();
     App.demo = new Demo();
-    $(function() {
+    return $(function() {
       App.session.load();
       App.applicationView = new ApplicationView();
-      return $('body').prepend(App.applicationView.$el);
-    });
-    return Backbone.history.start({
-      pushState: true
+      $('body').prepend(App.applicationView.$el);
+      return Backbone.history.start({
+        pushState: true
+      });
     });
   });
 
