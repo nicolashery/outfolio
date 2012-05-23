@@ -21,7 +21,7 @@
 
       CardsShareView.prototype.render = function() {
         var link;
-        link = window.location.origin + '/shared/' + App.user.id;
+        link = 'http://' + window.location.host + '/shared/' + App.user.id;
         this.$el.html(this.template({
           link: link
         }));

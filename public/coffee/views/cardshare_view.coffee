@@ -30,7 +30,7 @@ define ['app', 'models/card'], (App, Card) ->
     render: =>
       #console.debug 'CardShareView#render'
       # Build share link for this card
-      link = window.location.origin + '/shared/' + @model.get('owner')._id
+      link = 'http://' + window.location.host + '/shared/' + @model.get('owner')._id
       link += '/card/' + @model.id
       @$el.html @template({name: @model.get('name'), link: link})
       @

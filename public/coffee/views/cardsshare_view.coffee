@@ -13,6 +13,6 @@ define ['app'], (App) ->
     render: ->
       #console.debug 'CardsShareView#render'
       # Build the share link to the user's cards, from current user model
-      link = window.location.origin + '/shared/' + App.user.id
+      link = 'http://' + window.location.host + '/shared/' + App.user.id
       @$el.html @template({link: link})
       @

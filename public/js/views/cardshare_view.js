@@ -38,7 +38,7 @@
 
       CardShareView.prototype.render = function() {
         var link;
-        link = window.location.origin + '/shared/' + this.model.get('owner')._id;
+        link = 'http://' + window.location.host + '/shared/' + this.model.get('owner')._id;
         link += '/card/' + this.model.id;
         this.$el.html(this.template({
           name: this.model.get('name'),
