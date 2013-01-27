@@ -4,13 +4,13 @@
   "version": "0.1.0",
   "author": "Nicolas Hery <nicolahery@gmail.com>",
   "dependencies": {
-    "express": "3.0.0alpha3",
-    "jade": "0.26.0",
-    "mongoose": "2.6.4",
-    "everyauth": "0.2.32"
+    "express": "3.1.x",
+    "jade": "0.28.x",
+    "mongoose": "3.5.x",
+    "everyauth": "0.3.x"
   },
   "engines": {
-    "node": "0.6.x",
-    "npm":  "1.1.x"
+    "node": "0.8.x",
+    "npm":  "1.2.x"
   }
 }

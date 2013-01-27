@@ -45,9 +45,9 @@ CardSchema.pre 'save', (next) ->
 # sorted by most recently created
 CardSchema.statics.allByUserId = (userId, callback) ->
   query = @.find({})
-  query.where 'owner._id', userId
-  query.desc 'created_on'
-  query.run callback
+  query.where('owner._id').equals(userId)
+  query.sort '-created_on'
+  query.exec callback
 
 Card = mongoose.model 'Card', CardSchema
 
